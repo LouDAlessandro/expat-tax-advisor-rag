@@ -1,0 +1,40 @@
+# Python virtual environments and caches
+# ------------------------------------
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.venv/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE / VS Code & OS
+# -----------------
+.vscode/                 # Ignore the entire folder for simplicity
+*.code-workspace         # Local workspace files
+.DS_Store                # Mac specific OS artifacts
+
+# Configuration & Secrets (CRITICAL)
+# ---------------------------------
+# DO NOT commit environment variables or keys
+*.env
+*.pem
+*.key
+*.json-key               # Common pattern for GCP Service Account keys
+secrets.yaml
+config.local.yaml
+
+# MLOps / GCP Artifacts
+# ---------------------
+/artifacts/              # Generated models, embeddings, logs
+/outputs/                # Data pipeline outputs
+/data/local/             # Local datasets used for testing/dev
+
+# Terraform (Infrastructure as Code)
+# ----------------------------------
+.terraform/              # Directory where Terraform stores binaries and config
+terraform.tfstate        # The main state file (should be GCS-backed)
+terraform.tfstate.backup # Backup state file
